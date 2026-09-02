@@ -1,175 +1,158 @@
-# CodeAlpha Basic Chatbot
+# CodeAlpha Hangman Game
 
 ## 📌 Project Overview
 
-This project is a simple **rule-based chatbot** developed in Python as part of the **CodeAlpha Python Programming Internship**.
+This project is a simple **text-based Hangman Game** developed in Python as part of the **CodeAlpha Python Programming Internship**.
 
-The chatbot interacts with the user through the console and provides predefined responses based on the user's input.
-
-It uses basic Python concepts such as `if-elif-else`, functions, loops, strings, and input/output.
-
----
+The player has to guess a randomly selected word one letter at a time. The player is allowed a maximum of **6 incorrect guesses**. The game continues until the player correctly guesses the complete word or uses all six incorrect attempts.
 
 ## 🎯 Objective
 
-The main objective of this project is to build a basic chatbot that can:
+The objective of this project is to practice basic Python programming concepts such as:
 
-* Accept messages from the user.
-* Recognize predefined messages.
-* Provide appropriate predefined responses.
-* Continue the conversation until the user types `bye`.
+* Variables
+* Lists
+* Strings
+* `while` loops
+* `if-else` statements
+* User input
+* The `random` module
+* Basic input validation
 
----
+## 🎮 Features
 
-## ✨ Features
-
-* Simple text-based conversation.
-* Recognizes greetings such as `hello` and `hi`.
-* Responds to `"how are you"`.
-* Provides information about the chatbot.
-* Responds to unknown messages.
-* Allows the user to exit by typing `bye`.
-* Uses a simple rule-based approach.
-
----
+* Contains 5 predefined words.
+* Randomly selects one word for each game.
+* Allows the player to guess one letter at a time.
+* Displays correctly guessed letters.
+* Keeps track of previously guessed letters.
+* Allows a maximum of 6 incorrect guesses.
+* Displays the result when the game ends.
+* Prevents repeated letter guesses.
+* Validates user input.
 
 ## 🛠️ Technologies Used
 
 * **Programming Language:** Python
+* **Module:** `random`
 * **Interface:** Command Line / Console
-* **Libraries:** No external libraries required
-
----
 
 ## 📂 Project Structure
 
 ```text
-CodeAlpha_BasicChatbot/
+CodeAlpha_HangmanGame/
 │
-├── chatbot.py
+├── hangman.py
 └── README.md
 ```
 
----
-
-## ▶️ How to Run the Project
+## ▶️ How to Run
 
 ### Step 1: Install Python
 
 Make sure Python is installed on your computer.
 
-Check Python installation using:
+Check the installation using:
 
 ```bash
 python --version
 ```
 
-### Step 2: Open the Project Folder
+### Step 2: Download or Clone the Repository
 
-Open Command Prompt or Terminal inside the project folder.
+Clone the GitHub repository or download the project files.
 
-### Step 3: Run the Program
+### Step 3: Open the Project Folder
 
-Execute the following command:
+Open the terminal or command prompt inside the project folder.
+
+### Step 4: Run the Program
+
+Use:
 
 ```bash
-python chatbot.py
+python hangman.py
 ```
 
----
+## 🕹️ How to Play
 
-## 💬 Supported Commands
+1. The program randomly selects a word from the predefined word list.
+2. The selected word is displayed as underscores.
+3. Enter one letter at a time.
+4. If the letter exists in the word, it will be revealed.
+5. If the letter is incorrect, one attempt will be deducted.
+6. The player can make a maximum of 6 incorrect guesses.
+7. The player wins if all letters are guessed correctly.
+8. The player loses if all 6 incorrect attempts are used.
 
-The chatbot can respond to the following inputs:
-
-| User Input          | Chatbot Response                  |
-| ------------------- | --------------------------------- |
-| `hello`             | Hi! How can I help you?           |
-| `hi`                | Hi! How can I help you?           |
-| `how are you`       | I'm fine, thanks!                 |
-| `what is your name` | I'm a simple Python chatbot.      |
-| `what can you do`   | I can respond to simple messages. |
-| `bye`               | Goodbye! Have a nice day!         |
-
-For any other input, the chatbot responds:
-
-```text
-Sorry, I don't understand that.
-```
-
----
-
-## 🖥️ Example Output
+## 📋 Example
 
 ```text
 =================================
-       BASIC CHATBOT
+       WELCOME TO HANGMAN
 =================================
-Type 'bye' to exit the chatbot.
+Guess the word one letter at a time.
+You have 6 incorrect guesses.
 
-You: hello
-Bot: Hi! How can I help you?
+Word: _ _ _ _ _ _
+Guessed letters:
+Incorrect guesses left: 6
 
-You: how are you
-Bot: I'm fine, thanks!
+Enter a letter: p
+Correct guess!
 
-You: what is your name
-Bot: I'm a simple Python chatbot.
-
-You: what can you do
-Bot: I can respond to simple messages.
-
-You: bye
-Bot: Goodbye! Have a nice day!
+Word: p _ _ _ _ _
+Guessed letters: p
+Incorrect guesses left: 6
 ```
 
----
+## 📚 Concepts Used
 
-## 📚 Key Concepts Used
+### Random Module
 
-### 1. If-Else Statements
+The `random.choice()` function is used to select a random word from the predefined list.
 
-`if`, `elif`, and `else` are used to check the user's input and select the appropriate response.
+```python
+word = random.choice(words)
+```
 
-### 2. Functions
+### While Loop
 
-The `chatbot_response()` function processes the user's message and returns a response.
+The `while` loop keeps the game running until the player wins or loses.
 
-### 3. While Loop
+### Lists
 
-A `while` loop keeps the chatbot running until the user enters `bye`.
+Lists are used to store:
 
-### 4. User Input
+* Predefined words
+* Guessed letters
+* The currently revealed word
 
-The `input()` function is used to receive messages from the user.
+### Conditional Statements
 
-### 5. Strings
+`if-else` statements are used to determine whether the player's guess is correct or incorrect.
 
-String methods such as `.lower()` are used to make the chatbot recognize inputs regardless of capitalization.
+### Strings
 
----
+Strings are used for storing and processing words and user input.
 
 ## 🚀 Future Improvements
 
-The chatbot can be improved by adding:
+The project can be improved by adding:
 
-* More predefined questions and answers.
-* Natural Language Processing (NLP).
-* Voice input and output.
-* A graphical user interface (GUI).
-* AI-based responses.
-* Conversation history.
-* Integration with an external API.
+* Different difficulty levels
+* More words
+* Categories such as animals, countries, movies, etc.
+* A scoring system
+* A graphical user interface
+* A hangman drawing using ASCII art
+* A word database or external API
 
----
-
-## 👨‍💻 Internship Details
+## 👨‍💻 Internship Task
 
 **Organization:** CodeAlpha
 **Domain:** Python Programming
-**Task:** Task 4 – Basic Chatbot
-
----
+**Task:** Task 1 – Hangman Game
 
 ## 📄 License
 
