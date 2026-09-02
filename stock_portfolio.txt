@@ -1,5 +1,0 @@
-===== Stock Portfolio Tracker =====
-
-AAPL | Quantity: 2 | Price: $180 | Value: $360
-
-Total Investment: $360
